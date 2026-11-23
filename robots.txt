@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akrsoalsgh-ship-it.github.io/stayalivecoffee/sitemap.xml
