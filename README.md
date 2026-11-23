@@ -8,7 +8,8 @@
 ```
 index.html          홈페이지 본문 (HTML + CSS + JS 모두 이 파일 하나)
 assets/
-  hero-store.jpg    매장 외관 (히어로 이미지)
+  barista-pourover.jpg 사장님 핸드드립 (히어로 이미지, 오른쪽 스크롤바 2% 크롭)
+  hero-store.jpg    매장 외관 (가게 섹션 · 하단 배너)
   interior.jpg      매장 내부
   cake-chestnut.jpg 보늬밤 치즈케이크
   cafe-roastery.jpg 로스터 드럼 (카페 섹션)
