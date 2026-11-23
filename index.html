@@ -51,10 +51,10 @@ ul{margin:0;padding:0;list-style:none}
 .site-header{position:sticky;top:0;z-index:120;background:var(--white);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
 .brand{display:flex;flex-direction:column;line-height:1;flex:none}
-.brand .en{font-family:var(--serif);font-size:1.62rem;font-weight:600;letter-spacing:.005em;color:var(--ink)}
+.brand .en{font-family:var(--serif);font-size:1.82rem;font-weight:600;letter-spacing:.005em;color:var(--ink)}
 .brand .ko{font-family:var(--latin);font-size:.53rem;font-weight:600;letter-spacing:.34em;color:var(--muted);margin-top:5px}
 .nav{display:flex;align-items:center;gap:clamp(18px,2.3vw,34px)}
-.nav a{position:relative;font-size:.8rem;font-weight:500;letter-spacing:.04em;color:var(--ink);padding:4px 0;white-space:nowrap}
+.nav a{position:relative;font-size:.82rem;font-weight:500;letter-spacing:.04em;color:var(--ink);padding:4px 0;white-space:nowrap}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
 .nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
 .nav a.ext{color:var(--muted)}
@@ -75,21 +75,23 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45d
 /* ---------- shared ---------- */
 .eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--latin);font-size:.66rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
 .eyebrow::before{content:"";width:22px;height:1px;background:var(--muted);opacity:.65;flex:none}
-.sec{padding:clamp(68px,8vw,118px) 0}
+.sec{padding:clamp(62px,7vw,104px) 0;scroll-margin-top:76px}
 .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:clamp(34px,4.4vw,56px)}
+.sec-head .t{flex:1 1 auto;max-width:660px}
 .sec-head .t h2{font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.22;letter-spacing:-.04em;color:var(--ink);margin-top:14px}
-.sec-head .sub{margin-top:16px;max-width:46ch;font-size:.92rem;font-weight:400;line-height:1.9;color:var(--muted)}
+.sec-head .sub{margin-top:16px;max-width:44ch;font-size:.92rem;font-weight:400;line-height:1.9;color:var(--muted)}
 .arrow-link{display:inline-flex;align-items:center;gap:9px;flex:none;font-size:.82rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:4px;white-space:nowrap}
 .arrow-link span{transition:transform .2s ease}
 .arrow-link:hover span{transform:translateX(4px)}
 @media (max-width:760px){
   .sec-head{flex-direction:column;align-items:flex-start;gap:18px}
-  .sec-head .t h2{font-size:clamp(1.8rem,7.4vw,2.4rem)}
+  .sec-head .t{flex:1 1 auto;max-width:660px}
+.sec-head .t h2{font-size:clamp(1.8rem,7.4vw,2.4rem)}
 }
 .rule{border:0;border-top:1px solid var(--line);margin:0}
 
 /* ---------- hero ---------- */
-.hero{display:grid;grid-template-columns:1fr 1fr;background:var(--red);min-height:clamp(520px,74vh,760px)}
+.hero{display:grid;scroll-margin-top:0;grid-template-columns:1fr 1fr;background:var(--red);min-height:clamp(520px,74vh,760px)}
 .hero-media{position:relative;overflow:hidden;background:#2a1f17;min-height:320px}
 .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 26%}
 .hero-panel{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,5vw,64px) clamp(28px,5.5vw,88px);color:#fff8ef}
@@ -268,7 +270,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45d
 .tile{position:relative;display:block;overflow:hidden;aspect-ratio:16/9;background:#2a2118}
 .tile img{width:100%;height:100%;object-fit:cover;opacity:.88;transition:transform .7s ease,opacity .4s ease}
 .tile:hover img{transform:scale(1.035);opacity:1}
-.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,.02) 62%)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45),rgba(0,0,0,0) 34%),linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,.02) 58%)}
 .tile h3{position:absolute;left:22px;top:20px;z-index:2;color:#fff;font-size:clamp(.98rem,1.5vw,1.28rem);font-weight:700;letter-spacing:-.02em;line-height:1.4}
 .tile .btn{position:absolute;right:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-size:.76rem;font-weight:500;padding:10px 15px}
 .tile .btn i{font-style:normal;transition:transform .2s ease}
