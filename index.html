@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스테이 얼라이브 | Stay Alive Coffee Roasters — 남양주 덕소 로스터리 카페</title>
+<meta name="description" content="남양주 덕소의 로스터리 카페 스테이 얼라이브. 매일 볶은 원두와 드립백을 네이버 스마트스토어에서 만나보세요. 경기도 남양주시 와부읍 덕소로 66-46.">
+<meta name="theme-color" content="#141210">
+<meta property="og:type" content="website">
+<meta property="og:title" content="스테이 얼라이브 | Stay Alive Coffee Roasters">
+<meta property="og:description" content="덕소에서 매일 볶는 커피. 원두·드립백은 네이버 스마트스토어에서, 카페는 덕소로 66-46에서.">
+<meta property="og:image" content="assets/hero-store.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23141210'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23f7f2e9' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141210;
+  --ink-soft:#241f1b;
+  --ink-line:rgba(247,242,233,.16);
+  --paper:#faf7f2;
+  --paper-2:#f2ebdf;
+  --white:#fffdfa;
+  --red:#e00013;
+  --red-dark:#b3000f;
+  --text:#2b2621;
+  --muted:#6f655a;
+  --line:rgba(20,18,16,.12);
+  --serif:"Noto Serif KR","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --display:"Cormorant Garamond","Noto Serif KR",Georgia,serif;
+  --sans:"Noto Sans KR",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --wrap:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--text);
+  font-family:var(--sans);font-weight:400;line-height:1.75;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:400;line-height:1.35;letter-spacing:-.01em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+.wrap{width:min(100% - 44px,var(--wrap));margin-inline:auto}
+@media (max-width:640px){.wrap{width:calc(100% - 36px)}}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:200}
+.skip:focus{left:12px;top:12px}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* ---------- header ---------- */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  transition:background .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.site-header.is-scrolled{
+  background:rgba(250,247,242,.92);
+  backdrop-filter:saturate(140%) blur(14px);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom-color:rgba(20,18,16,.08);
+  box-shadow:0 10px 30px -24px rgba(20,18,16,.6);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.brand{display:flex;flex-direction:column;gap:2px;line-height:1;color:#f7f2e9;transition:color .4s var(--ease)}
+.brand .mark{font-family:var(--display);font-size:1.6rem;letter-spacing:.02em;font-weight:500}
+.brand .sub{font-size:.56rem;letter-spacing:.42em;text-transform:uppercase;opacity:.72;padding-left:.2em}
+.is-scrolled .brand{color:var(--ink)}
+.nav{display:flex;align-items:center;gap:clamp(14px,2.2vw,34px)}
+.nav a{
+  font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#efe8dd;
+  padding:6px 0;position:relative;transition:color .3s var(--ease);white-space:nowrap;
+}
+.nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;
+  transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
+}
+.nav a:hover::after,.nav a.is-active::after{transform:scaleX(1)}
+.is-scrolled .nav a{color:var(--text)}
+.nav a.is-active{color:#fff}
+.is-scrolled .nav a.is-active{color:var(--red)}
+.nav-cta{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.4);color:#f7f2e9;font-size:.78rem;letter-spacing:.1em;
+  transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease);white-space:nowrap}
+.nav-cta:hover{background:#f7f2e9;color:var(--ink);border-color:#f7f2e9}
+.is-scrolled .nav-cta{border-color:rgba(20,18,16,.25);color:var(--ink)}
+.is-scrolled .nav-cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;padding:0;position:relative}
+.burger span{display:block;height:1.5px;width:22px;margin:5px auto;background:#f7f2e9;transition:transform .35s var(--ease),opacity .25s}
+.is-scrolled .burger span{background:var(--ink)}
+body.nav-open .burger span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+body.nav-open .burger span:nth-child(2){opacity:0}
+body.nav-open .burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media (max-width:920px){
+  .nav-cta{display:none}
+  .burger{display:block}
+  .nav{
+    position:fixed;inset:0;flex-direction:column;justify-content:center;gap:26px;
+    background:var(--ink);opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s;
+  }
+  body.nav-open .nav{opacity:1;visibility:visible}
+  .nav a, .is-scrolled .nav a{font-size:1.05rem;letter-spacing:.18em;color:#f2ebdf}
+  .nav a.is-active, .is-scrolled .nav a.is-active{color:#ff9a9a}
+  body.nav-open .site-header{background:transparent;border-bottom-color:transparent}
+  body.nav-open .brand{color:#f2ebdf}
+  body.nav-open .burger span{background:#f2ebdf!important}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;background:var(--ink);color:#f7f2e9;overflow:hidden;
+  padding-top:clamp(118px,15vh,168px);padding-bottom:clamp(64px,9vh,104px);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(90% 70% at 78% 8%,rgba(224,0,19,.16),transparent 62%),
+    radial-gradient(60% 60% at 8% 92%,rgba(176,138,90,.14),transparent 60%);
+}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(30px,5vw,76px);align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--red)}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.75}
+.hero .eyebrow{color:#ff6b6b}
+.hero h1{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.35rem,5.4vw,4.15rem);line-height:1.24;letter-spacing:-.02em;
+  margin:22px 0 0;
+}
+.hero h1 em{font-style:normal;color:#e8ddcb;position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:1px;background:rgba(232,221,203,.45)}
+.hero .lead{margin-top:22px;max-width:33ch;color:#c9c0b4;font-weight:300;font-size:clamp(.94rem,1.15vw,1.03rem);line-height:1.85}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 26px;border-radius:999px;font-size:.86rem;letter-spacing:.04em;font-weight:500;
+  border:1px solid transparent;transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease);
+}
+.btn svg{width:15px;height:15px;flex:none}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 14px 30px -18px rgba(224,0,19,.9)}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(247,242,233,.34);color:#f4eee4}
+.btn-ghost:hover{background:rgba(247,242,233,.1);border-color:rgba(247,242,233,.6);transform:translateY(-2px)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:38px;padding-top:22px;border-top:1px solid rgba(247,242,233,.14);
+  font-size:.79rem;color:#a89e92;letter-spacing:.03em}
+.hero-meta span{display:inline-flex;align-items:center;gap:8px}
+.hero-meta svg{width:14px;height:14px;opacity:.8;flex:none}
+.hero-media{position:relative}
+.hero-media .frame{
+  position:absolute;inset:16px -16px -16px 16px;border:1px solid rgba(247,242,233,.24);border-radius:150px 150px 6px 6px;
+  pointer-events:none;
+}
+/* 사진은 실제 비율 그대로(크롭·왜곡 없이) 표시하고, 아치 프레임은 모서리만 다듬습니다. */
+.hero-media img{
+  position:relative;display:block;width:100%;height:auto;
+  border-radius:150px 150px 6px 6px;filter:saturate(1.02) contrast(1.02);
+}
+.hero-badge{
+  position:absolute;left:-14px;bottom:38px;background:var(--paper);color:var(--ink);
+  padding:13px 18px 13px 16px;border-radius:3px;box-shadow:0 18px 40px -26px rgba(0,0,0,.8);
+  display:flex;flex-direction:column;gap:1px;line-height:1.35;
+}
+.hero-badge b{font-family:var(--display);font-size:1.12rem;letter-spacing:.06em;font-weight:500}
+.hero-badge small{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:920px){
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .hero-media{order:2;max-width:520px}
+  .hero-media img{border-radius:120px 120px 6px 6px}
+  .hero-media .frame{border-radius:120px 120px 6px 6px;inset:12px -12px -12px 12px}
+  .hero-badge{left:auto;right:10px;bottom:-16px}
+  .hero .lead{max-width:46ch}
+}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--ink);color:#685e53;border-top:1px solid rgba(247,242,233,.1);overflow:hidden;padding:15px 0}
+.marquee-track{display:flex;width:max-content;animation:slide 46s linear infinite}
+.marquee-track span{font-family:var(--display);font-size:.95rem;letter-spacing:.28em;text-transform:uppercase;padding:0 26px;white-space:nowrap}
+.marquee-track span::after{content:"·";margin-left:46px;color:#8a7b66;font-size:1.2em}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(72px,9vw,126px) 0;scroll-margin-top:76px}
+.sec-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,60px);align-items:end;margin-bottom:clamp(38px,5vw,58px)}
+.sec-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.85rem,3.6vw,2.85rem);line-height:1.3;letter-spacing:-.02em;margin-top:18px}
+.sec-head .desc{color:var(--muted);font-size:.94rem;font-weight:300;line-height:1.9;max-width:44ch;justify-self:end;padding-bottom:6px}
+@media (max-width:860px){
+  .sec-head{grid-template-columns:1fr;align-items:start;gap:16px}
+  .sec-head .desc{justify-self:start;padding-bottom:0}
+}
+
+/* ---------- about ---------- */
+.about{background:var(--paper)}
+.about .quote{
+  margin:0 0 clamp(46px,6vw,72px);padding:clamp(30px,4vw,46px) clamp(26px,4vw,54px);
+  border-left:2px solid var(--red);background:var(--paper-2);
+  font-family:var(--serif);font-size:clamp(1.1rem,2.1vw,1.5rem);line-height:1.7;font-weight:300;color:#332c25;
+}
+.about .quote small{display:block;margin-top:14px;font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,42px)}
+.feature{padding-top:26px;border-top:1px solid var(--line)}
+.feature .num{font-family:var(--display);font-size:.85rem;letter-spacing:.24em;color:var(--red)}
+.feature h3{font-family:var(--serif);font-size:1.2rem;margin:14px 0 10px;font-weight:500}
+.feature p{color:var(--muted);font-size:.9rem;font-weight:300;line-height:1.85}
+@media (max-width:820px){.features{grid-template-columns:1fr;gap:26px}}
+.process{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.8vw,20px);margin-top:clamp(40px,5vw,62px)}
+.process figure{margin:0;position:relative;overflow:hidden;border-radius:4px;background:#e7e0d5}
+.process img{width:100%;height:auto;display:block}
+.process figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 15px 11px;font-size:.68rem;letter-spacing:.13em;color:#fff;
+  background:linear-gradient(to top,rgba(0,0,0,.55),transparent);text-transform:uppercase}
+@media (max-width:640px){.process{grid-template-columns:1fr}}
+
+/* ---------- store ---------- */
+.store{background:var(--paper-2);position:relative}
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:34px}
+.chip{
+  border:1px solid rgba(20,18,16,.18);background:transparent;border-radius:999px;
+  padding:9px 18px;font-size:.8rem;letter-spacing:.04em;cursor:pointer;color:var(--muted);
+  transition:all .3s var(--ease);
+}
+.chip:hover{border-color:rgba(20,18,16,.4);color:var(--text)}
+.chip.is-on{background:var(--ink);border-color:var(--ink);color:#f7f2e9}
+.chip b{font-weight:500;opacity:.55;margin-left:5px;font-size:.92em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,28px)}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}}
+.card{
+  background:var(--white);border:1px solid rgba(20,18,16,.08);border-radius:6px;overflow:hidden;
+  display:flex;flex-direction:column;position:relative;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -38px rgba(20,18,16,.55);border-color:rgba(20,18,16,.16)}
+.card[hidden]{display:none}
+.thumb{position:relative;aspect-ratio:1/1.12;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid rgba(20,18,16,.06)}
+.thumb img{width:100%;height:100%;object-fit:contain;padding:20px 20px 8px;transition:transform .7s var(--ease)}
+.card:hover .thumb img{transform:scale(1.035)}
+.thumb.photo img{object-fit:cover;padding:0}
+.tag{
+  position:absolute;left:14px;top:14px;z-index:2;background:rgba(20,18,16,.9);color:#f7f2e9;
+  font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;border-radius:2px;
+}
+.tag.red{background:var(--red)}
+.card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1;gap:9px}
+.card-body h3{font-family:var(--serif);font-size:1.12rem;font-weight:500;letter-spacing:-.01em}
+.card-body .note{font-size:.83rem;color:var(--muted);font-weight:300;line-height:1.75;min-height:2.9em}
+.card-body .spec{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#9c9083}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;margin-top:2px}
+.price .was{font-size:.82rem;color:#a3998c;text-decoration:line-through}
+.price strong{font-size:1.16rem;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+.price .disc{font-size:.62rem;letter-spacing:.1em;color:var(--red);border:1px solid rgba(224,0,19,.3);padding:2px 6px;border-radius:2px}
+.ship{display:flex;align-items:center;gap:7px;font-size:.76rem;color:var(--muted)}
+.ship svg{width:14px;height:14px;flex:none;opacity:.7}
+.ship.free{color:#3f6b4a}
+.rate{display:flex;align-items:center;gap:6px;font-size:.76rem;color:var(--muted)}
+.rate .star{color:#c99a3a;font-size:.85em}
+.rate b{font-weight:500;color:var(--text)}
+.opts{font-size:.74rem;color:var(--muted);line-height:1.8;border-top:1px dashed rgba(20,18,16,.12);padding-top:10px;margin-top:2px}
+.opts b{font-weight:500;color:var(--text)}
+.card-cta{
+  margin-top:auto;padding-top:12px;display:inline-flex;align-items:center;justify-content:space-between;gap:8px;
+  font-size:.8rem;letter-spacing:.04em;font-weight:500;color:var(--ink);
+  border-top:1px solid rgba(20,18,16,.1);
+}
+.card-cta span.lbl{display:inline-flex;align-items:center;gap:7px}
+.card-cta svg{width:14px;height:14px;transition:transform .35s var(--ease)}
+.card:hover .card-cta svg{transform:translateX(4px)}
+.card-cta:hover{color:var(--red)}
+.store-note{margin-top:30px;font-size:.76rem;color:#8b8073;line-height:1.9;max-width:70ch}
+.store-note a{border-bottom:1px solid rgba(224,0,19,.5);color:var(--red)}
+
+/* ---------- cafe ---------- */
+.cafe{background:var(--paper)}
+.cafe-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4.5vw,64px);align-items:center}
+.cafe-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cafe-photos figure{margin:0;overflow:hidden;border-radius:4px;position:relative;background:#e7e0d5}
+.cafe-photos img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.cafe-photos figure:hover img{transform:scale(1.04)}
+.cafe-photos .wide{grid-column:1/-1}
+.cafe-photos .wide img{height:auto}
+.cafe-photos .tall{aspect-ratio:3/4}
+.cafe-photos figcaption{position:absolute;left:0;bottom:0;right:0;padding:26px 14px 10px;font-size:.68rem;letter-spacing:.12em;color:#fff;
+  background:linear-gradient(to top,rgba(0,0,0,.55),transparent);text-transform:uppercase}
+.cafe-copy h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.85rem,3.6vw,2.85rem);line-height:1.32;letter-spacing:-.02em;margin:18px 0 22px}
+.cafe-copy p{color:var(--muted);font-weight:300;line-height:1.95;font-size:.95rem}
+.cafe-copy p + p{margin-top:16px}
+.cafe-points{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.cafe-points span{font-size:.74rem;letter-spacing:.06em;color:var(--text);background:var(--paper-2);border-radius:999px;padding:7px 14px}
+@media (max-width:880px){.cafe-grid{grid-template-columns:1fr}}
+
+/* ---------- menu ---------- */
+.menu{background:var(--ink);color:#efe8dd;position:relative;overflow:hidden}
+.menu::before{content:"";position:absolute;inset:auto -20% -40% -20%;height:60%;background:radial-gradient(closest-side,rgba(224,0,19,.18),transparent);pointer-events:none}
+.menu .eyebrow{color:#ff6b6b}
+.menu .sec-head .desc{color:#a89e92}
+.menu .sec-head h2{color:#f7f2e9}
+.menu-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);position:relative}
+.menu-col h3{
+  font-family:var(--display);font-size:.9rem;letter-spacing:.3em;text-transform:uppercase;
+  color:#8a7b66;padding-bottom:14px;border-bottom:1px solid var(--ink-line);margin-bottom:20px;
+}
+.menu-item{display:flex;align-items:baseline;gap:10px;padding:9px 0;font-size:.92rem}
+.menu-item .nm{color:#e6ded1;font-weight:300}
+.menu-item .nm em{font-style:normal;color:#8f8578;font-size:.76rem;margin-left:7px;letter-spacing:.04em}
+.menu-item .dots{flex:1;border-bottom:1px dotted rgba(239,232,221,.22);transform:translateY(-4px);min-width:12px}
+.menu-item .pr{font-variant-numeric:tabular-nums;font-size:.88rem;color:#f7f2e9;letter-spacing:.02em}
+.menu-item.sig .nm{color:#fff}
+.menu-item.sig .nm::before{content:"✦";color:#ff6b6b;font-size:.7em;margin-right:7px;vertical-align:.1em}
+.menu-foot{margin-top:clamp(34px,4vw,48px);padding-top:26px;border-top:1px solid var(--ink-line);display:flex;flex-wrap:wrap;gap:16px 34px;justify-content:space-between;align-items:center}
+.menu-foot p{font-size:.78rem;color:#8f8578;line-height:1.9}
+.menu-foot a{color:#f7f2e9;border-bottom:1px solid rgba(247,242,233,.35);padding-bottom:1px;font-size:.82rem}
+@media (max-width:880px){.menu-cols{grid-template-columns:1fr;gap:34px}}
+
+/* ---------- visit ---------- */
+.visit{background:var(--paper-2)}
+.visit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,58px)}
+.info-card{background:var(--white);border:1px solid rgba(20,18,16,.08);border-radius:6px;padding:clamp(26px,3.4vw,42px)}
+.info-row{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid rgba(20,18,16,.08);font-size:.9rem}
+.info-row:last-of-type{border-bottom:0}
+.info-row .k{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+.info-row .k svg{width:15px;height:15px;opacity:.65;flex:none}
+.info-row .v{color:var(--text);line-height:1.8}
+.info-row .v strong{font-weight:500}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:3px 0;font-variant-numeric:tabular-nums}
+.hours li span:first-child{color:var(--muted);min-width:64px}
+.hours .now{display:inline-block;font-size:.68rem;letter-spacing:.08em;color:var(--red);border:1px solid rgba(224,0,19,.3);padding:1px 6px;border-radius:2px;margin-left:8px;vertical-align:1px}
+.visit-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.visit-actions .btn{padding:13px 22px;font-size:.82rem}
+.visit-note{margin-top:16px;font-size:.76rem;color:var(--muted);line-height:1.85}
+.map-card{
+  position:relative;border-radius:6px;overflow:hidden;min-height:340px;height:100%;
+  display:flex;flex-direction:column;background:var(--white);
+  border:1px solid rgba(20,18,16,.08);
+}
+.map-frame{position:relative;flex:1 1 auto;min-height:300px;background:#e7e0d5}
+.map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.map-bar{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;
+  padding:14px 16px;background:var(--ink);color:#c9c0b4;
+}
+.map-bar .addr{font-size:.74rem;line-height:1.6;letter-spacing:.02em;color:#c9c0b4;flex:1 1 240px}
+.map-bar .addr b{display:block;color:#f7f2e9;font-weight:500;font-size:.79rem;letter-spacing:.05em;margin-bottom:2px}
+.map-btns{display:flex;gap:8px;flex-wrap:wrap}
+.map-btns a{font-size:.74rem;letter-spacing:.06em;padding:8px 14px;border-radius:999px;border:1px solid rgba(247,242,233,.36);color:#f7f2e9;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+.map-btns a:hover{background:#f7f2e9;color:var(--ink);border-color:#f7f2e9}
+@media (max-width:880px){
+  .visit-grid{grid-template-columns:1fr}
+  .map-card{min-height:0}
+  .map-frame{min-height:280px}
+}
+
+/* ---------- footer ---------- */
+.site-footer{background:var(--ink);color:#a89e92;padding:clamp(48px,6vw,72px) 0 30px}
+.foot-top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:34px;padding-bottom:36px;border-bottom:1px solid var(--ink-line)}
+.foot-brand .mark{font-family:var(--display);font-size:1.9rem;color:#f7f2e9;letter-spacing:.02em;font-weight:500;line-height:1.1}
+.foot-brand .sub{font-size:.58rem;letter-spacing:.4em;text-transform:uppercase;color:#7d7264;margin-top:6px}
+.foot-brand p{margin-top:16px;font-size:.82rem;line-height:1.9;max-width:30ch;color:#8f8578}
+.foot-col h4{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:#6f655a;margin-bottom:16px;font-weight:500}
+.foot-col li{font-size:.83rem;line-height:2;color:#a89e92}
+.foot-col a:hover{color:#f7f2e9}
+.foot-biz{margin-top:26px;font-size:.72rem;line-height:2;color:#6f655a}
+.foot-biz b{color:#8f8578;font-weight:400}
+.foot-bottom{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:.7rem;color:#5e564c;letter-spacing:.02em}
+@media (max-width:820px){.foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .marquee-track{animation:none}
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="스테이 얼라이브 홈으로">
+      <span class="mark">Stay Alive</span>
+      <span class="sub">Coffee Roasters</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="주요 메뉴">
+      <a href="#about">About</a>
+      <a href="#store">Store</a>
+      <a href="#cafe">Cafe</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="nav-cta" href="https://smartstore.naver.com/stayalivecoffee" target="_blank" rel="noopener">
+      네이버 스토어
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Specialty Coffee Roasters · 덕소</span>
+        <h1>매일 아침,<br><em>덕소에서</em><br>볶습니다</h1>
+        <p class="lead">스테이 얼라이브는 남양주 덕소의 작은 로스터리 카페입니다. 매장에서 내리는 커피를 같은 원두로, 원두와 드립백에 담아 보내드립니다.</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="#store">
+            온라인 스토어 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#visit">매장 안내</a>
+        </div>
+        <div class="hero-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            월–토 08:00–19:00 · 일 10:00–19:00
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            경기도 남양주시 와부읍 덕소로 66-46
+          </span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="frame" aria-hidden="true"></div>
+        <img src="assets/hero-store.jpg" alt="덕소로 66-46, 검은 외벽과 큰 창으로 된 스테이 얼라이브 매장 외관" width="1179" height="1125" fetchpriority="high">
+        <div class="hero-badge">
+          <b>Since 2021</b>
+          <small>Deokso · Namyangju</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Specialty Coffee Roasters</span><span>Deokso · Namyangju</span><span>Freshly Roasted</span><span>Since 2021</span><span>Drip Bag</span><span>Single Origin</span>
+      <span>Specialty Coffee Roasters</span><span>Deokso · Namyangju</span><span>Freshly Roasted</span><span>Since 2021</span><span>Drip Bag</span><span>Single Origin</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="sec about" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="rv">
+          <span class="eyebrow">About</span>
+          <h2>세 가지 블랜드,<br>한 가지 마음</h2>
+        </div>
+        <p class="desc rv d1">덕소 블랜드와 나나파크 블랜드, 그리고 디카페인. 매일 마시는 커피부터 선물하고 싶은 커피까지, 스테이 얼라이브가 직접 볶고 내리는 커피입니다.</p>
+      </div>
+
+      <blockquote class="quote rv">
+        “나의 동네, 나의 고향처럼 익숙하고 편안한 커피”
+        <small>덕소 블랜드</small>
+      </blockquote>
+
+      <div class="features">
+        <div class="feature rv">
+          <span class="num">01</span>
+          <h3>매일 로스팅</h3>
+          <p>주문을 받은 뒤 볶아 보내드립니다. 원두의 신선함이 향미의 시작이니까요.</p>
+        </div>
+        <div class="feature rv d1">
+          <span class="num">02</span>
+          <h3>덕소의 커피</h3>
+          <p>구운 아몬드처럼 고소하고, 카카오의 달콤 쌉싸름한 여운. 매일 마셔도 편안한 맛을 지향합니다.</p>
+        </div>
+        <div class="feature rv d2">
+          <span class="num">03</span>
+          <h3>매장과 같은 원두</h3>
+          <p>카페에서 내리는 원두를 그대로 담아 보냅니다. 집에서도 같은 잔을 위해.</p>
+        </div>
+      </div>
+
+      <div class="process rv">
+        <figure>
+          <img src="assets/about-roast.jpg" alt="로스터에서 식고 있는 덕소 블랜드 원두" width="1600" height="1063" loading="lazy">
+          <figcaption>Roasting · 매일 볶는 원두</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/about-cupping.jpg" alt="커핑 테이블에 나란히 놓인 원두 샘플과 스푼" width="1600" height="1063" loading="lazy">
+          <figcaption>Cupping · 매일의 테이스팅</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE -->
+  <section class="sec store" id="store">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="rv">
+          <span class="eyebrow">Online Store</span>
+          <h2>매일 볶은 원두,<br>집에서도</h2>
+        </div>
+        <p class="desc rv d1">네이버 스마트스토어에 준비한 원두와 디카페인, 드립백 거치대까지. 모든 상품은 네이버 스토어에서 바로 구매하실 수 있습니다.</p>
+      </div>
+
+      <div class="filters rv" role="group" aria-label="상품 분류">
+        <button class="chip is-on" data-filter="all" aria-pressed="true">전체 <b>7</b></button>
+        <button class="chip" data-filter="bean" aria-pressed="false">원두 <b>6</b></button>
+        <button class="chip" data-filter="gear" aria-pressed="false">드립·용품 <b>1</b></button>
+      </div>
+
+      <div class="grid" id="productGrid">
+
+        <!-- 덕소 200g -->
+        <article class="card rv" data-cat="bean">
+          <div class="thumb">
+            <span class="tag">데일리</span>
+            <img src="assets/p-dakso.jpg" alt="덕소 블랜드 200g 패키지" width="817" height="1067" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>덕소 블랜드 200g</h3>
+            <p class="note">구운 아몬드처럼 고소하고, 카카오의 달콤 쌉싸름한 여운이 남는 기본 블랜드.</p>
+            <p class="spec">Whole Bean · 200g</p>
+            <div class="price"><strong>15,000원</strong></div>
+            <p class="ship free">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+              무료배송 <span style="opacity:.75">(14,000원 이상)</span>
+            </p>
+            <p class="rate"><span class="star">★</span><b>4.88</b> 리뷰 8</p>
+            <p class="opts"><b>분쇄</b> 홀빈 · 핸드드립 · 에스프레소 · 더치커피 · 모카포트 · 기타</p>
+            <a class="card-cta" href="https://smartstore.naver.com/stayalivecoffee/products/5370479267" target="_blank" rel="noopener">
+              <span class="lbl">네이버에서 구매</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 덕소 500g -->
+        <article class="card rv d1" data-cat="bean">
+          <div class="thumb">
+            <span class="tag red">베스트</span>
+            <img src="assets/p-dakso.jpg" alt="덕소 블랜드 500g 패키지" width="817" height="1067" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>덕소 블랜드 500g</h3>
+            <p class="note">가장 많이 찾는 사이즈. 매일 내려 마시는 집·사무실 커피로.</p>
+            <p class="spec">Whole Bean · 500g</p>
+            <div class="price"><span class="was">25,000원</span><strong>22,500원</strong><span class="disc">최대할인가</span></div>
+            <p class="ship free">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+              무료배송 <span style="opacity:.75">(14,000원 이상)</span>
+            </p>
+            <p class="rate"><span class="star">★</span><b>4.82</b> 리뷰 17</p>
+            <p class="opts"><b>분쇄</b> 홀빈 · 핸드드립 · 에스프레소 · 더치커피 · 모카포트 · 기타</p>
+            <a class="card-cta" href="https://smartstore.naver.com/stayalivecoffee/products/6772344205" target="_blank" rel="noopener">
+              <span class="lbl">네이버에서 구매</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 덕소 1kg -->
+        <article class="card rv d2" data-cat="bean">
+          <div class="thumb">
+            <span class="tag">대용량</span>
+            <img src="assets/p-dakso.jpg" alt="덕소 블랜드 1kg 패키지" width="817" height="1067" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>덕소 블랜드 1kg</h3>
+            <p class="note">매일 여러 잔을 내리는 집과 카페, 사무실을 위한 넉넉한 구성.</p>
+            <p class="spec">Whole Bean · 1kg</p>
+            <div class="price"><span class="was">38,000원</span><strong>35,000원</strong><span class="disc">최대할인가</span></div>
+            <p class="ship free">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+              무료배송 <span style="opacity:.75">(14,000원 이상)</span>
+            </p>
+            <p class="rate"><span class="star">★</span><b>5.0</b> 리뷰 5</p>
+            <p class="opts"><b>분쇄</b> 홀빈 · 핸드드립 · 에스프레소 · 더치커피 · 모카포트 · 기타</p>
+            <a class="card-cta" href="https://smartstore.naver.com/stayalivecoffee/products/9084684089" target="_blank" rel="noopener">
+              <span class="lbl">네이버에서 구매</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 나나파크 200g -->
+        <article class="card rv" data-cat="bean">
+          <div class="thumb">
+            <span class="tag red">시그니처</span>
+            <img src="assets/p-nana.jpg" alt="나나파크 블랜드 200g 패키지" width="818" height="1066" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>나나파크 블랜드 200g</h3>
+            <p class="note">포도와 블루베리의 상큼함, 은은한 자두의 여운. 스테이 얼라이브를 보여주는 블랜드.</p>
+            <p class="spec">에티오피아 내추럴 · 워시드</p>
+            <div class="price"><strong>18,000원</strong></div>
+            <p class="ship free">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+              무료배송 <span style="opacity:.75">(14,000원 이상)</span>
+            </p>
+            <p class="rate"><span class="star">★</span><b>5.0</b> 리뷰 12</p>
+            <p class="opts"><b>노트</b> 꽃향 · 블루베리 · 자두 · 포도 · 롱 애프터</p>
+            <a class="card-cta" href="https://smartstore.naver.com/stayalivecoffee/products/5371617396" target="_blank" rel="noopener">
+              <span class="lbl">네이버에서 구매</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 나나파크 500g -->
+        <article class="card rv d1" data-cat="bean">
+          <div class="thumb">
+            <span class="tag">500g</span>
+            <img src="assets/p-nana.jpg" alt="나나파크 블랜드 500g 패키지" width="818" height="1066" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>나나파크 블랜드 500g</h3>
+            <p class="note">과일 향미를 좋아한다면 넉넉하게. 산미와 단맛의 균형이 좋은 블랜드.</p>
+            <p class="spec">에티오피아 내추럴 · 워시드 · 500g</p>
+            <div class="price"><span class="was">32,000원</span><strong>29,000원</strong><span class="disc">최대할인가</span></div>
+            <p class="ship">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+              배송비 3,000원 <span style="opacity:.75">(50,000원 이상 무료)</span>
+            </p>
+            <p class="opts"><b>노트</b> 크랜베리 · 와인 · 레드 그레이프 · 플로럴</p>
+            <a class="card-cta" href="https://smartstore.naver.com/stayalivecoffee/products/12081728904" target="_blank" rel="noopener">
+              <span class="lbl">네이버에서 구매</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 디카페인 200g -->
+        <article class="card rv d2" data-cat="bean">
+          <div class="thumb">
+            <span class="tag">디카페인</span>
+            <img src="assets/p-decaf.jpg" alt="디카페인 블렌드 200g 패키지" width="900" height="1096" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>디카페인 블렌드 200g</h3>
+            <p class="note">수면 걱정 없이, 늦은 오후에도 편안하게. 카페인만 덜어낸 같은 자리의 커피.</p>
+            <p class="spec">Decaf · 200g</p>
+            <div class="price"><span class="was">20,000원</span><strong>18,000원</strong><span class="disc">최대할인가</span></div>
+            <p class="ship free">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+              무료배송
+            </p>
+            <p class="rate"><span class="star">★</span><b>5.0</b> 리뷰 2</p>
+            <p class="opts"><b>분쇄</b> 홀빈 · 핸드드립 · 에스프레소 · 더치커피 · 모카포트 · 기타</p>
+            <a class="card-cta" href="https://smartstore.naver.com/stayalivecoffee/products/8378457330" target="_blank" rel="noopener">
+              <span class="lbl">네이버에서 구매</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 드립체어 -->
+        <article class="card rv d3" data-cat="gear">
+          <div class="thumb photo">
+            <span class="tag">드립 용품</span>
+            <img src="assets/p-drip.jpg" alt="드립백을 컵에 걸쳐 두는 스테인리스 드립체어" width="828" height="817" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>드립체어</h3>
+            <p class="note">드립백을 컵에 걸쳐 두는 스테인리스 거치대. 물을 부울 때마다 편안해집니다.</p>
+            <p class="spec">비에메종 · 국산</p>
+            <div class="price"><strong>14,400원</strong></div>
+            <p class="ship">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+              배송비 3,000원 <span style="opacity:.75">(제주·도서산간 추가 2,000원)</span>
+            </p>
+            <p class="rate"><span class="star">★</span><b>4.6</b> 리뷰 5</p>
+            <p class="opts">
+              <b>옵션</b><br>
+              드립백 14,400원 · 드립백 세트 6개 22,900원<br>
+              드립백 대용량 세트 15개 34,400원
+            </p>
+            <a class="card-cta" href="https://smartstore.naver.com/stayalivecoffee/products/5860012115" target="_blank" rel="noopener">
+              <span class="lbl">네이버에서 구매</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="store-note rv">
+        가격과 배송비는 2026년 11월 23일 네이버 스마트스토어 기준입니다. ‘최대할인가’는 네이버플러스 멤버십·쿠폰을 적용했을 때 표시되는 금액이며, 실제 결제 금액과 재고는
+        <a href="https://smartstore.naver.com/stayalivecoffee" target="_blank" rel="noopener">스토어</a>에서 확인해 주세요.
+      </p>
+    </div>
+  </section>
+
+  <!-- CAFE -->
+  <section class="sec cafe" id="cafe">
+    <div class="wrap">
+      <div class="cafe-grid">
+        <div class="cafe-photos rv">
+          <figure class="wide">
+            <img src="assets/cafe-roastery.jpg" alt="로스터 드럼에서 식고 있는 원두" width="1600" height="1063" loading="lazy">
+            <figcaption>Roastery · Deokso-ro 66-46</figcaption>
+          </figure>
+          <figure class="tall">
+            <img src="assets/interior.jpg" alt="큰 창으로 길이 보이는 스테이 얼라이브 매장 내부" width="900" height="1200" loading="lazy">
+            <figcaption>Interior</figcaption>
+          </figure>
+          <figure class="tall">
+            <img src="assets/cake-chestnut.jpg" alt="보늬밤 치즈케이크 한 조각" width="900" height="1200" loading="lazy">
+            <figcaption>Chestnut Cheese Cake</figcaption>
+          </figure>
+        </div>
+        <div class="cafe-copy rv d1">
+          <span class="eyebrow">Cafe</span>
+          <h2>덕소로 66-46,<br>검은 건물</h2>
+          <p>큰 창과 검은 외벽, 길가에 놓인 작은 간판. 스테이 얼라이브는 덕소로 변에서 매일 아침 문을 엽니다.</p>
+          <p>원두를 볶는 향과 함께 잠깐 앉아 가는 자리. 커피 한 잔과 케이크 한 조각이면 충분한 시간을 만들고 싶습니다. 원두는 덕소·나나파크·디카페인 중에서 골라 드립니다.</p>
+          <div class="cafe-points">
+            <span>연중무휴</span>
+            <span>원두 선택 가능</span>
+            <span>디카페인 옵션</span>
+            <span>드립백 · 원두 판매</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="sec menu" id="menu">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="rv">
+          <span class="eyebrow">Menu</span>
+          <h2>카페에서</h2>
+        </div>
+        <p class="desc rv d1">매장에서 드리는 커피와 디저트입니다. 원두는 덕소·나나파크·디카페인 중에서 고르실 수 있고, 우유 변경과 샷 추가도 가능합니다.</p>
+      </div>
+
+      <div class="menu-cols">
+        <div class="menu-col rv">
+          <h3>Coffee</h3>
+          <div class="menu-item"><span class="nm">아메리카노</span><span class="dots"></span><span class="pr">4,500</span></div>
+          <div class="menu-item"><span class="nm">카페 라떼</span><span class="dots"></span><span class="pr">5,000</span></div>
+          <div class="menu-item"><span class="nm">플랫 화이트</span><span class="dots"></span><span class="pr">5,000</span></div>
+          <div class="menu-item"><span class="nm">수제 바닐라 라떼</span><span class="dots"></span><span class="pr">5,500</span></div>
+          <div class="menu-item"><span class="nm">씨 솔트 카라멜 라떼</span><span class="dots"></span><span class="pr">5,500</span></div>
+          <div class="menu-item"><span class="nm">오크치 콜드브루</span><span class="dots"></span><span class="pr">5,000</span></div>
+          <div class="menu-item"><span class="nm">오크치 바닐라 라떼</span><span class="dots"></span><span class="pr">6,000</span></div>
+          <div class="menu-item"><span class="nm">드라이 카푸치노</span><span class="dots"></span><span class="pr">5,500</span></div>        </div>
+
+        <div class="menu-col rv d1">
+          <h3>Signature</h3>
+          <div class="menu-item sig"><span class="nm">흑임자 라떼<em>강원도 안 가도 되는 맛</em></span><span class="dots"></span><span class="pr">6,500</span></div>
+          <div class="menu-item sig"><span class="nm">덕소 비엔나<em>차갑게만</em></span><span class="dots"></span><span class="pr">6,000</span></div>
+          <div class="menu-item sig"><span class="nm">오크치 아인슈페너</span><span class="dots"></span><span class="pr">6,000</span></div>
+          <div class="menu-item"><span class="nm">딥 라떼</span><span class="dots"></span><span class="pr">5,300</span></div>
+          <div class="menu-item"><span class="nm">오렌지 커피<em>차갑게만</em></span><span class="dots"></span><span class="pr">5,500</span></div>
+          <div class="menu-item"><span class="nm">블루베리 히비스커스</span><span class="dots"></span><span class="pr">6,500</span></div>
+          <div class="menu-item"><span class="nm">캐모마일 메들리</span><span class="dots"></span><span class="pr">6,500</span></div>
+        </div>
+
+        <div class="menu-col rv d2">
+          <h3>Dessert</h3>
+          <div class="menu-item sig"><span class="nm">프렌치 토스트</span><span class="dots"></span><span class="pr">9,000</span></div>
+          <div class="menu-item sig"><span class="nm">보늬밤 치즈케이크</span><span class="dots"></span><span class="pr">9,500</span></div>
+          <div class="menu-item"><span class="nm">바스크 치즈 케이크</span><span class="dots"></span><span class="pr">7,500</span></div>
+          <div class="menu-item"><span class="nm">포카치아 잠봉뵈르</span><span class="dots"></span><span class="pr">9,500</span></div>
+          <div class="menu-item"><span class="nm">딸기 생크림케이크</span><span class="dots"></span><span class="pr">8,500</span></div>
+          <div class="menu-item"><span class="nm">초콜렛 휘낭시에</span><span class="dots"></span><span class="pr">3,800</span></div>
+          <div class="menu-item"><span class="nm">고메버터 플레인 스콘</span><span class="dots"></span><span class="pr">4,500</span></div>
+        </div>
+      </div>
+
+      <div class="menu-foot">
+        <p>가격은 원 단위이며, 매장 사정에 따라 달라질 수 있습니다.<br>포장 주문은 네이버 스마트플레이스에서도 가능합니다.</p>
+        <a href="https://smartstore.naver.com/stayalivecoffee" target="_blank" rel="noopener">원두·드립백 보러 가기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec visit" id="visit">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="rv">
+          <span class="eyebrow">Visit</span>
+          <h2>오시는 길</h2>
+        </div>
+        <p class="desc rv d1">덕소역에서 도보 약 6분. 큰 창이 있는 검은 건물, 길가에 ‘Stay Alive’ 간판이 있습니다.</p>
+      </div>
+
+      <div class="visit-grid">
+        <div class="info-card rv">
+          <div class="info-row">
+            <span class="k">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              주소
+            </span>
+            <span class="v"><strong>경기도 남양주시 와부읍 덕소로 66-46</strong></span>
+          </div>
+          <div class="info-row">
+            <span class="k">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              영업시간
+            </span>
+            <span class="v">
+              <ul class="hours">
+                <li><span>월 – 토</span><span>08:00 – 19:00</span></li>
+                <li><span>일요일</span><span>10:00 – 19:00</span></li>
+                <li><span>라스트오더</span><span>18:30</span></li>
+              </ul>
+              <span class="now">연중무휴</span>
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="k">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3Z"/></svg>
+              전화
+            </span>
+            <span class="v"><a href="tel:0315766646"><strong>031-576-6646</strong></a></span>
+          </div>
+          <div class="info-row">
+            <span class="k">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+              온라인
+            </span>
+            <span class="v">
+              <a href="https://smartstore.naver.com/stayalivecoffee" target="_blank" rel="noopener">네이버 스마트스토어</a><br>
+              <a href="https://www.instagram.com/stayalive.coffee/" target="_blank" rel="noopener">인스타그램 @stayalive.coffee</a>
+            </span>
+          </div>
+
+          <div class="visit-actions">
+            <a class="btn btn-red" href="tel:0315766646">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3Z"/></svg>
+              전화하기
+            </a>
+          </div>
+          <p class="visit-note">일요일은 오전 10시에 문을 엽니다. 단체·포장 문의는 전화로 편하게 연락 주세요.</p>
+        </div>
+
+        <div class="map-card rv d1">
+          <div class="map-frame">
+            <iframe
+              src="https://maps.google.com/maps?q=%EC%8A%A4%ED%85%8C%EC%9D%B4+%EC%96%BC%EB%9D%BC%EC%9D%B4%EB%B8%8C+%EA%B2%BD%EA%B8%B0%EB%8F%84+%EB%82%A8%EC%96%91%EC%A3%BC%EC%8B%9C+%EC%99%80%EB%B6%80%EC%9D%8D+%EB%8D%95%EC%86%8C%EB%A1%9C+66-46&amp;hl=ko&amp;z=17&amp;output=embed"
+              title="스테이 얼라이브 위치 지도 — 경기도 남양주시 와부읍 덕소로 66-46"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <div class="map-bar">
+            <p class="addr">
+              <b>Stay Alive Coffee Roasters</b>
+              경기도 남양주시 와부읍 덕소로 66-46 · 덕소역 도보 약 6분
+            </p>
+            <div class="map-btns">
+              <a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EB%82%A8%EC%96%91%EC%A3%BC%EC%8B%9C%20%EC%99%80%EB%B6%80%EC%9D%8D%20%EB%8D%95%EC%86%8C%EB%A1%9C%2066-46" target="_blank" rel="noopener">네이버 지도</a>
+              <a href="https://map.kakao.com/link/search/%EC%8A%A4%ED%85%8C%EC%9D%B4%20%EC%96%BC%EB%9D%BC%EC%9D%B4%EB%B8%8C%20%EB%8D%95%EC%86%8C" target="_blank" rel="noopener">카카오맵 길찾기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="mark">Stay Alive</div>
+        <div class="sub">Coffee Roasters</div>
+        <p>남양주 덕소의 로스터리 카페. 매일 볶은 원두와 드립백을 네이버 스토어에서 보내드립니다.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>031-576-6646</li>
+          <li>경기도 남양주시 와부읍<br>덕소로 66-46</li>
+          <li>월–토 08:00–19:00<br>일 10:00–19:00 (연중무휴)</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="https://smartstore.naver.com/stayalivecoffee" target="_blank" rel="noopener">네이버 스마트스토어</a></li>
+          <li><a href="https://www.instagram.com/stayalive.coffee/" target="_blank" rel="noopener">인스타그램</a></li>
+          <li><a href="#store">온라인 스토어</a></li>
+          <li><a href="#menu">메뉴</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-biz">
+      <b>상호</b> 스테이 얼라이브(Stay Alive) &nbsp;·&nbsp; <b>대표</b> 박민호 &nbsp;·&nbsp; <b>사업자</b> 개인사업자<br>
+      <b>주소</b> 경기도 남양주시 와부읍 덕소로 66-46 &nbsp;·&nbsp; <b>전화</b> 031-576-6646
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Stay Alive Coffee Roasters. All rights reserved.</span>
+      <span>상품 가격·배송 정보는 네이버 스마트스토어 기준입니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header = document.getElementById('siteHeader');
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+
+  function onScroll(){
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  burger.addEventListener('click', function(){
+    var open = document.body.classList.toggle('nav-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  nav.addEventListener('click', function(e){
+    if (e.target.tagName === 'A' && document.body.classList.contains('nav-open')){
+      document.body.classList.remove('nav-open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && document.body.classList.contains('nav-open')){
+      document.body.classList.remove('nav-open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // reveal
+  var items = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // active nav
+  var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window){
+    var navIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          links.forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id); });
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){ navIo.observe(s); });
+  }
+
+  // product filter
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#productGrid .card');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('is-on'); c.setAttribute('aria-pressed','false'); });
+      chip.classList.add('is-on');
+      chip.setAttribute('aria-pressed','true');
+      var f = chip.getAttribute('data-filter');
+      cards.forEach(function(card){
+        card.hidden = !(f === 'all' || card.getAttribute('data-cat') === f);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
