@@ -826,7 +826,15 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45d
     var sunday = (v.weekday === 'Sun');
     var open = sunday ? (mins >= 600 && mins < 1140) : (mins >= 480 && mins < 1140);
     stateEl.textContent = open ? 'NOW OPEN' : 'CLOSED';
-    hoursEl.innerHTML = (sunday ? '오늘 10:00–19:00' : '오늘 08:00–19:00') + ' · 연중무휴<br>경기도 남양주시 와부읍 덕소로 66-46';
+    var hoursText;
+    if (open){
+      hoursText = (sunday ? '오늘 10:00–19:00' : '오늘 08:00–19:00') + ' · 연중무휴';
+    } else if (mins < (sunday ? 600 : 480)){
+      hoursText = (sunday ? '오늘 10:00에 엽니다' : '오늘 08:00에 엽니다');
+    } else {
+      hoursText = '내일 ' + (sunday ? '08:00' : (v.weekday === 'Sat' ? '10:00' : '08:00')) + '에 엽니다';
+    }
+    hoursEl.innerHTML = hoursText + '<br>경기도 남양주시 와부읍 덕소로 66-46';
   }
   updateClock();
   setInterval(updateClock, 1000);
